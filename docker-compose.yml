@@ -1,0 +1,18 @@
+services:
+  sentinel-vosk-server:
+    build: .
+    container_name: sentinel-vosk-server
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - VOSK_SAMPLE_RATE=16000
+
+      # Option B (recommended): models dir + model folder name
+      - VOSK_MODELS_DIR=/models
+      - VOSK_MODEL=${VOSK_MODEL?err:You must set VOSK_MODEL (e.g. fr, en, ...)}
+      # OR Option A:
+      # - VOSK_MODEL_PATH=${VOSK_MODEL_PATH?err:You must set VOSK_MODEL_PATH (e.g. /models/fr)}
+    volumes:
+      - ./models:/models:ro
+    restart: unless-stopped

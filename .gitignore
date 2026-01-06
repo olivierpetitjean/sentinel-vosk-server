@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+
+# Virtual env
+.venv/
+venv/
+ENV/
+
+# IDEs / editors
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker / local env files
+.env
+.env.*
+docker-compose.override.yml
+
+# Local models and large assets (not committed)
+models/
+*.zip
+*.tar.gz
+*.tgz
+*.wav
